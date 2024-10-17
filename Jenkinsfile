@@ -28,12 +28,12 @@ pipeline {
             }
         }
 
-    //     post{
-    //         always{
-    //             echo 'cleaning up workspace'
-    //             deleteDir()
-    //     }
-    // }
+        post{
+            always{
+                echo 'cleaning up workspace'
+                deleteDir()
+        }
+    }
     
     }
 
