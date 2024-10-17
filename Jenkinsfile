@@ -28,13 +28,22 @@ pipeline {
             }
         }
 
-        post{
-            always{
-                echo 'cleaning up workspace'
-                deleteDir()
+    //     post{
+    //         always{
+    //             echo 'cleaning up workspace'
+    //             deleteDir()
+    //     }
+    // }
+    
+        post {
+        // Clean after build
+            always {
+                cleanWs(cleanWhenNotBuilt: false,
+                        deleteDirs: true,
+                        notFailBuild: true,
+                        )
         }
     }
-    
     }
 
 }
