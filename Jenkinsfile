@@ -20,6 +20,21 @@ pipeline {
                 echo "Sonar scan done"
             }
         }
+
+        stage('Build') {
+            steps {
+                sh 'ls -ltr'
+                sh 'zip -r catalogue.zip ./* --exclude=.git --exclude=.zip'
+            }
+        }
+
+        post{
+        always{
+            echo 'cleaning up workspace'
+            deleteDir()
+        }
+    }
+    
     }
 
 }
