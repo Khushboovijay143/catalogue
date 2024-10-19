@@ -35,15 +35,6 @@ pipeline {
     //     }
     // }
     
-        post {
-        // Clean after build
-            always {
-                cleanWs(cleanWhenNotBuilt: false,
-                        deleteDirs: true,
-                        notFailBuild: true,
-                        )
-        }
-    }
     }
 
 }
